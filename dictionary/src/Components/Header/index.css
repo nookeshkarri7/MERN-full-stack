@@ -1,0 +1,36 @@
+.bg-header-main-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+}
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 10px;
+}
+.header-title {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Kumbh Sans";
+}
+.search-button {
+  background-color: transparent;
+  border-width: 0px;
+  color: #fff;
+}
+.search-input {
+  background-color: transparent;
+  border-width: 0px;
+  color: #fff;
+  height: 40px;
+}
+.search-box-container {
+  width: 90%;
+}
+.search-input:focus {
+  outline: none;
+}

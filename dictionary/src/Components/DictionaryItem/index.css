@@ -1,0 +1,15 @@
+.li-item-heading {
+  font-size: 20px;
+  font-family: "Kumbh Sans";
+}
+.li-item-para {
+  font-family: "Kumbh Sans";
+}
+.link-item {
+  text-decoration: none;
+  color: black;
+}
+.hr-class {
+  width: 100vw;
+  opacity: 0.6;
+}

@@ -1,0 +1,28 @@
+.detailed-view-container {
+  padding: 10px;
+  background-image: linear-gradient(#fff, rgb(235, 226, 226));
+  background-size: cover;
+  height: 200vh;
+}
+.close-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 8px;
+}
+.close-button {
+  background-color: transparent;
+  border-width: 0px;
+  font-size: 17px;
+}
+.para-low {
+  font-family: "Kumbh Sans";
+}
+
+.para-bold {
+  font-weight: bold;
+  font-family: "Kumbh Sans";
+}
+.main-heading {
+  font-weight: bold;
+  font-family: "Kumbh Sans";
+}

@@ -1,0 +1,39 @@
+.bg-main-container {
+  background-color: #622547;
+}
+.bg-wordslist-container {
+  background-color: #fff;
+  padding: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 100vh;
+}
+.wordslist-inner-container {
+  overflow-y: scroll;
+  height: 80vh;
+}
+
+.wordslist-title-container {
+  height: 30px;
+}
+.wordslist-title {
+  font-size: 17px;
+  font-family: "Kumbh Sans";
+  font-weight: 400;
+}
+.loader-div {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+}
+.addButton {
+  background-color: #622547;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  position: absolute;
+  bottom: 20px;
+}
