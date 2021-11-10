@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import "./App.css";
-import Home from "./Components/Home";
-import DetailedView from "./Components/DetailedView";
-import CreateWord from "./Components/CreateWord";
+import { BrowserRouter, Route, Switch } from "react-router-dom"; //used to make routing between different pages
+import Home from "./Components/Home"; //imports Home Component
+import DetailedView from "./Components/DetailedView"; //imports DetailedView Component
+import CreateWord from "./Components/CreateWord"; //imports CreateWord Component
+import "./App.css"; //imports css
 
 function App() {
   return (

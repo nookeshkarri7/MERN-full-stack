@@ -10,16 +10,24 @@ import CreateWord from "../CreateWord";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 class Home extends Component {
+  /*state is used store the values which varies everytime 
+        wordsList to store fetched all words data from backend,
+        isLoading to show loading while fetching data from backend,
+        search is used store search data from header component
+    */
   state = {
     wordsList: [],
     isLoading: true,
     search: "",
   };
 
+  //it works only one time after render ,it doesnt rerenders data like state
   componentDidMount() {
     this.getData();
+    //calls getData method
   }
 
+  //used to get all words data from backend and updates in state
   getData = async () => {
     const dictionaryItem = await axios.get("http://localhost:4000/view/");
     const data = dictionaryItem.data;
@@ -30,23 +38,27 @@ class Home extends Component {
     }));
   };
 
+  //In this word is came from CreateWord component and updates state
   sendWordData = (word) => {
     this.setState((prev) => ({
       wordsList: [...prev.wordsList, word.data],
     }));
   };
 
+  //When user enters any text in search box in header it stores inn state
   fiterData = (search) => {
     this.setState({ search: search });
   };
 
-
-
+  //this method is used filter data based search input
   getSearchedList = () => {
     const { wordsList, search } = this.state;
-    console.log(search);
-
     let fiteredList;
+    /* if search text is empty,wordsList is assigned to  fiteredList variable 
+     and it shows all data to user 
+        if search input is given filter method is used to filter data from 
+        words list in which word tilte matches the search text 
+    */
     if (search === undefined) {
       fiteredList = wordsList;
     } else {
@@ -60,8 +72,7 @@ class Home extends Component {
 
   render() {
     const { isLoading } = this.state;
-    const wordsList = this.getSearchedList();
-    console.log(wordsList);
+    const wordsList = this.getSearchedList(); //used to get filtered data
     return (
       <div className="bg-main-container">
         <Header fiterData={this.fiterData} />
@@ -79,7 +90,6 @@ class Home extends Component {
                 <DictionaryItem
                   eachItem={eachDictionaryItem}
                   key={eachDictionaryItem._id}
-                  
                 />
               ))}
             </div>

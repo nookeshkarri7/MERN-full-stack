@@ -1,29 +1,40 @@
-import { Component } from "react";
-import axios from "axios";
+import { Component } from "react"; //imports Component parent class from react
+import axios from "axios"; //imports axios from axios to do api calls
+
+/*imports loader to show loading effect 
+    while fetching data*/
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-import "./index.css";
+import "./index.css"; //imports css styles
 
 class DetailedView extends Component {
+  /*state is used store the values which varies everytime 
+        wordsList to store fetched word data from backend,
+        isLoading to show loading while fetching data from backend
+    */
   state = { wordsList: [], isLoading: true };
 
+  //it works only one time after render ,it doesnt rerenders data like state
   componentDidMount() {
     this.getData();
+    //calls getData method
   }
 
+  //used to get words list from backend based id parameter
   getData = async () => {
-    const { id } = this.props.match.params;
+    const { id } = this.props.match.params; //id parameter from input url
     const response = await axios.get(
       `http://localhost:4000/word-details/${id}`
     );
-    console.log(response.data);
+    //updates state with response and shows detailed word description to user
     this.setState({ wordsList: response.data, isLoading: false });
   };
 
+  //this method activated when user click close button
   goToHome = () => {
     const { history } = this.props;
-    history.replace("/");
+    history.replace("/"); //it Redirects user to homepage
   };
 
   render() {
