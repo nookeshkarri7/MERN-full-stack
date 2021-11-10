@@ -31,7 +31,7 @@ class Home extends Component {
   getData = async () => {
     const dictionaryItem = await axios.get("http://localhost:4000/view/");
     const data = dictionaryItem.data;
-    //console.log(data);
+    console.log(data);
     this.setState((prev) => ({
       wordsList: [...prev.wordsList, ...data],
       isLoading: false,
